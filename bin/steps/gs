@@ -4,7 +4,7 @@
 echo "----- Installing GhostScript 9.14 -------"
 
 
-tar xzf $ROOT_DIR/ghostscript.tar.gz
+tar xf $ROOT_DIR/ghostscript.tar.bz2
 cd ghostscript
 ./configure --disable-cups --disable-gtk --with-drivers=FILES
 make

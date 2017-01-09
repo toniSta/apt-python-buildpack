@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
 
-echo "----- Installing GhostScript 9.10 -------"
+echo "----- Installing GhostScript 9.14 -------"
 
-mkdir ghostscript
-tar -xzf $ROOT_DIR/ghost.tar.gz -C ghostscript
+
+tar xzf $ROOT_DIR/ghostscript.tar.gz
 cd ghostscript
-
-
-sudo dpkg -i libgs9.deb
-sudo dpkg -i gs9.deb
+./configure --disable-cups --disable-gtk --with-drivers=FILES
+make

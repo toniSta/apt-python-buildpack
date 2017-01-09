@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+echo "----- Installing GhostScript 9.10 -------"
+
+mkdir ghostscript
+tar -xzf $BIN_DIR/ghost.tar.gz -C ghostscript
+cd ghostscript
+
+
+dpkg -i libgs9.deb
+dpkg -i gs9.deb

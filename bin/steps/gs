@@ -8,5 +8,5 @@ tar -xzf $ROOT_DIR/ghost.tar.gz -C ghostscript
 cd ghostscript
 
 
-dpkg -i libgs9.deb
-dpkg -i gs9.deb
+sudo dpkg -i libgs9.deb
+sudo dpkg -i gs9.deb

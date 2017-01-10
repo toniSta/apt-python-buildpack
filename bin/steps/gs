@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-echo "----- Installing GhostScript 9.14 using build directory $1-------"
+echo "----- Installing GhostScript 9.14 using build directory $1 -------"
 
 
 INSTALL_DIR=$BUILD_DIR/vendor/ghostscript
+ENVSCRIPT=$BUILD_DIR/.profile.d/gs.sh
 mkdir -p $INSTALL_DIR
 
 tar xf $ROOT_DIR/gs.tar.bz2 -C $INSTALL_DIR
+mkdir -p $BUILD_DIR/.profile.d
 
-export PATH=$INSTALL_DIR/gs:$PATH
-
-echo "----- Finished installion of GhostScript 9.14 -------"
+echo "export PATH=\"$INSTALL_DIR/gs/bin:\$PATH\"" > $ENVSCRIPT
+echo "export GS_LIB=\"$INSTALL_DIR/gs/share/ghostscript/$GS_VERSION/lib\"" >> $ENVSCRIPT
+echo "export LD_LIBRARY_PATH=\"$INSTALL_DIR/gs/share/ghostscript/$GS_VERSION/lib:\$LD_LIBRARY_PATH\"" >> $ENVSCRIPT
+echo "Ghostscript installed"
+echo "----- Finished installation of GhostScript 9.14 -------"

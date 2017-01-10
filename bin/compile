@@ -239,11 +239,11 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
-source $BIN_DIR/steps/gs
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
 
 # GS.
+source $BIN_DIR/steps/gs
 
 
 # Create .profile script for application runtime environment variables.
@@ -268,18 +268,18 @@ bpwatch stop post_compile
 # Store new artifacts in cache.
 bpwatch start dump_cache
 
-  rm -rf $CACHE_DIR/.heroku/python
-  rm -rf $CACHE_DIR/.heroku/python-version
-  rm -rf $CACHE_DIR/.heroku/python-stack
-  rm -rf $CACHE_DIR/.heroku/vendor
-  rm -rf $CACHE_DIR/.heroku/venv
+  # rm -rf $CACHE_DIR/.heroku/python
+  # rm -rf $CACHE_DIR/.heroku/python-version
+  # rm -rf $CACHE_DIR/.heroku/python-stack
+  # rm -rf $CACHE_DIR/.heroku/vendor
+  # rm -rf $CACHE_DIR/.heroku/venv
 
-  mkdir -p $CACHE_DIR/.heroku
-  cp -R .heroku/python $CACHE_DIR/.heroku/
-  cp -R .heroku/python-version $CACHE_DIR/.heroku/
-  cp -R .heroku/python-stack $CACHE_DIR/.heroku/ &> /dev/null || true
-  cp -R .heroku/vendor $CACHE_DIR/.heroku/ &> /dev/null || true
-  cp -R .heroku/venv $CACHE_DIR/.heroku/ &> /dev/null || true
+  # mkdir -p $CACHE_DIR/.heroku
+  # cp -R .heroku/python $CACHE_DIR/.heroku/
+  # cp -R .heroku/python-version $CACHE_DIR/.heroku/
+  # cp -R .heroku/python-stack $CACHE_DIR/.heroku/ &> /dev/null || true
+  # cp -R .heroku/vendor $CACHE_DIR/.heroku/ &> /dev/null || true
+  # cp -R .heroku/venv $CACHE_DIR/.heroku/ &> /dev/null || true
 
 bpwatch stop dump_cache
 

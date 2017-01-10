@@ -239,11 +239,11 @@ source $BIN_DIR/steps/gdal
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
+source $BIN_DIR/steps/gs
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
 
 # GS.
-source $BIN_DIR/steps/gs
 
 
 # Create .profile script for application runtime environment variables.

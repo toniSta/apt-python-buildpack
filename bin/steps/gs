@@ -11,8 +11,10 @@ mkdir -p $INSTALL_DIR
 tar xf $ROOT_DIR/gs.tar.bz2 -C $INSTALL_DIR
 mkdir -p $BUILD_DIR/.profile.d
  
-echo ls $INSTALL_DIR
+echo "export PATH=\"$INSTALL_DIR/gs:\$PATH\"" > $ENVSCRIPT 
+echo "export LD_LIBRARY_PATH=\"$INSTALL_DIR/gs:\$LD_LIBRARY_PATH\"" >> $ENVSCRIPT 
+
 export PATH=$INSTALL_DIR/gs:$PATH
-export LD_LIBRARY_PATH=$INSTALL_DIR/gs:\$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$INSTALL_DIR/gs:$LD_LIBRARY_PATH
 
 echo "----- Finished installation of GhostScript 9.14 -------"

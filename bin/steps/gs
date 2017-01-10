@@ -1,34 +1,14 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 
-# echo "-----> Installing Ghostscript 9.20 using build directory $1"
-
-# BUILD_DIR=$1
-# LOCATION="$BUILD_DIR/vendor/gs"
-
-
-# # mkdir -p $LOCATION/bin
-# # mv $BINARY $LOCATION/bin/gs
-
-# echo "-----> Building runtime environment for Ghostscript to $LOCATION"
-
-# mkdir -p $BUILD_DIR/.profile.d
-# echo "export PATH=\"\$HOME/vendor/gs/bin:\$PATH\"" > $BUILD_DIR/.profile.d/ghostscript.sh
-
-
-
-
-
 echo "----- Installing GhostScript 9.14 using build directory $1-------"
 
 
-tar xf $ROOT_DIR/ghostscript.tar.bz2 -C $BUILD_DIR
-cd $BUILD_DIR/ghostscript
-echo "Start ./configure"
-./configure -q --disable-cups --disable-gtk --with-drivers=FILES
-echo "Finished ./configure"
-echo "Start make"
-make -s
-echo "Finished make"
+INSTALL_DIR=$BUILD_DIR/vendor/ghostscript
+mkdir -p $INSTALL_DIR
+
+tar xf $ROOT_DIR/gs.tar.bz2 -C $INSTALL_DIR
+
+export PATH=$INSTALL_DIR/gs:$PATH
 
 echo "----- Finished installion of GhostScript 9.14 -------"

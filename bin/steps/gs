@@ -6,9 +6,12 @@ echo "----- Installing GhostScript 9.14 -------"
 
 tar xf $ROOT_DIR/ghostscript.tar.bz2
 cd ghostscript
-./configure --disable-cups --disable-gtk --with-drivers=FILES
-make
-
+echo "Start ./configure"
+./configure -q --disable-cups --disable-gtk --with-drivers=FILES
+echo "Finished ./configure"
+echo "Start make"
+make -s
+echo "Finished make"
 cd $ROOT_DIR
 
 echo "----- Finished installion of GhostScript 9.14 -------"

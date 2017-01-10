@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 
 echo "----- Installing GhostScript 9.14 -------"
@@ -12,6 +12,6 @@ echo "Finished ./configure"
 echo "Start make"
 make -s
 echo "Finished make"
-cd $ROOT_DIR
+# cd $ROOT_DIR
 
 echo "----- Finished installion of GhostScript 9.14 -------"

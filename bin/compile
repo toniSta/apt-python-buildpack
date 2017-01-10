@@ -243,7 +243,7 @@ source $BIN_DIR/steps/pip-install
 sub-env $BIN_DIR/steps/collectstatic
 
 # GS.
-source $BIN_DIR/steps/gs
+# source $BIN_DIR/steps/gs
 
 
 # Create .profile script for application runtime environment variables.

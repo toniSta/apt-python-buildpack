@@ -30,8 +30,5 @@ echo "Finished ./configure"
 echo "Start make"
 make -s
 echo "Finished make"
-echo "Start make install"
-make install 
-echo "Finished make install"
 
 echo "----- Finished installion of GhostScript 9.14 -------"
